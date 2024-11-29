@@ -1,0 +1,40 @@
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.nav-link button{
+  background: #A81323;
+}
+
+.btn {
+  background-color: #C5152F;
+  color: #FEEFEF;
+  border: 2px solid #C5152F;
+  border-radius: 4px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #A81323;
+  border: 2px solid #C5152F;
+}
+
+.main-content {
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+  padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .custom-navbar .navbar-nav {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  h3{
+    font-size: 1rem;
+  }
+}

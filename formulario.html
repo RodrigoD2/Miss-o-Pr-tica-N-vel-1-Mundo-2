@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="hat-chef.png" type="image/x-icon">
+  <title>Formulário de Cadastro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="formatos.css">
+  <link rel="stylesheet" href="formulario.css">
+</head>
+<body style="background-color: #FFB6C1;">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+      <div class="container-fluid">
+        <a class="logo" href="home.html"><img src="marca.png" alt="logo" style="height: 40px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="receitas.html">Receitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="formulario.html">Cadastre-se</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="text-center my-4">Cadastre-se e receba novidades em seu E-mail</h3>
+        <form action="mailto:seuemail@dominio.com" method="post" enctype="text/plain">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="rua" class="form-label">Rua</label>
+              <input type="text" class="form-control" id="rua" name="rua" required>
+            </div>
+            <div class="col-md-6">
+              <label for="numero" class="form-label">Número</label>
+              <input type="number" class="form-control" id="numero" name="numero" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="complemento" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="complemento" name="complemento">
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" name="cidade" required>
+            </div>
+            <div class="col-md-6">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" name="estado" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="cep" name="cep" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        </form>
+        <div id="mensagem-sucesso" class="alert alert-success" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; width: auto; padding: 15px; text-align: center;">
+          Cadastro feito com sucesso! <br>
+          <a href="home.html" class="btn btn-primary mt-2">Voltar á página principal</a>
+        </div>   
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-bg">
+    <div class="footer-conteudo">
+      <p>Cantinho das Receitas @ Alguns direitos reservados</p>
+      <div class="link">
+        <a href="https://www.guiadasemana.com.br/receitas/galeria/receitas-faceis-com-ate-tres-ingredientes">Receitas referência</a>
+      </div>
+      <div>
+        <a href="https://getbootstrap.com/">Bootstrap</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('mensagem-sucesso').style.display = 'block';
+      document.querySelector('form').reset();
+      setTimeout(function() {
+        window.location.href = 'mailto:seuemail@dominio.com';
+      }, 1000);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
